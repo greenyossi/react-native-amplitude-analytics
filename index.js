@@ -69,11 +69,19 @@ class Amplitude {
     }
   }
 
+  setDeviceId() {
+    if (amplitudeHasInitialized) {
+      return RNAmplitudeSDK.setDeviceId();
+    } else {
+      throw new Error('You called Amplitude.setDeviceId before initializing it. Run new Amplitude(key) first.');
+    }
+  }
+  
   getDeviceId() {
     if (amplitudeHasInitialized) {
       return RNAmplitudeSDK.getDeviceId();
     } else {
-      throw new Error('You called Amplitude.getDeviceId before initializing it. Run new Amplitude(key) first.')
+      throw new Error('You called Amplitude.getDeviceId before initializing it. Run new Amplitude(key) first.');
     }
   }
 
