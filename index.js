@@ -69,9 +69,9 @@ class Amplitude {
     }
   }
 
-  setDeviceId() {
+  setDeviceId(id) {
     if (amplitudeHasInitialized) {
-      return RNAmplitudeSDK.setDeviceId();
+      return RNAmplitudeSDK.setDeviceId(id);
     } else {
       throw new Error('You called Amplitude.setDeviceId before initializing it. Run new Amplitude(key) first.');
     }
